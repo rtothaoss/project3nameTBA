@@ -15,6 +15,7 @@ const ccMonth = '01';
 const ccYear = '2022';
 const CVV = '123';
 
+
 const supreme = {
     browser: null,
     page: null,
@@ -26,7 +27,7 @@ const supreme = {
 
     },
 
-    selection: async (name) => {
+    selection: async () => {
 
         await supreme.page.goto(BASE_URL);
 
@@ -34,11 +35,11 @@ const supreme = {
 
         await itemSelection[0].click();
 
-        await supreme.page.waitFor(1000)
+        await supreme.page.waitFor(1500)
        
         await supreme.page.click('input[name = "commit"]')
         
-        await supreme.page.waitFor(1000)
+        await supreme.page.waitFor(1500)
 
     },
 
@@ -66,13 +67,14 @@ const supreme = {
 
         await supreme.page.type('input[id="orcer"]', CVV)
 
-        await browser.close();
+        await supreme.page.click("#order_terms")
 
-        debugger;
+        console.log('done')
 
     }
 
 
 }
+
 
 module.exports = supreme;

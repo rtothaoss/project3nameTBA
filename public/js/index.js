@@ -8,8 +8,5 @@ await sup.selection();
 
 await sup.checkout();
 
-await browser.close();
-
-
 })()
 
