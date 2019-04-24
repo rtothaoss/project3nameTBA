@@ -15,6 +15,9 @@
 <path d="M532.412 3.352V103H519.308V28.696L486.188 103H476.972L443.708 28.84V103H430.604V3.352H444.716L481.58 85.72L518.444 3.352H532.412Z" stroke="white" stroke-width="2" mask="url(#path-1-outside-1)"/>
 <path d="M567.739 12.856V47.272H604.315V57.352H567.739V92.632H608.635V103H554.635V2.488H608.635V12.856H567.739Z" stroke="white" stroke-width="2" mask="url(#path-1-outside-1)"/>
 </svg>
+<div class='text-center'>
+<button id='startBot' type="button" class="btn btn-danger">Start Bot</button>
+</div>
 </div>
 
 <div class='container'>
@@ -25,6 +28,24 @@
 
 <script>
 
+$(function () {
+
+    $('#startBot').on('click', function() {
+
+    $.ajax({
+      method: 'GET',
+      url:'/bot'
+    })
+    .then(function(data){
+      console.log('finished')
+    })
+    })
+
+
+
+
+
+})
 
 
 </script>

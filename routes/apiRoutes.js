@@ -1,7 +1,7 @@
 var db = require('../models');
 var axios = require("axios");
 var cheerio = require("cheerio");
-const sup = require('../public/js/index.js')
+const sup = require('../public/js/supreme.js')
 
 
 
@@ -94,10 +94,28 @@ function droplistPage() {
       })
   });
 
-  // app.get('/bot', function(req,res) {
-  //   sup().then(function(supRes) {
-  //     res.send(supRes)
-  //   })
-  // })
+  app.get('/bot', (req, res) => {
+    const SupremeBot = new Promise ((resolve, reject) =>{
+      sup
+      .supremeCard1()
+        .then(data => {
+          resolve(data)
+        })
+        .catch(err => reject('SupremeBot Failed!'))
+    })
+    const SupremeBot2 = new Promise((resolve, reject) => {
+      sup
+      .supremeCard2()
+      .then(data => {
+        resolve(data)
+      })
+      .catch(err => reject('SupremeBot2 Failed!'))
+    })
+    Promise.all([SupremeBot, SupremeBot2])
+    .then(data => {
+      res.render('index')
+    })
+    .catch(err => res.status(500).send(err))
+  })
 
 }
