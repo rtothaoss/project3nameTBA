@@ -7,15 +7,22 @@
 .intro {
     height: 25vh;
     background-color: red;
-    margin-left: 400px;
-    margin-right: 400px;
+    margin-left: 350px;
+    margin-right: 300px;
 }
-
+#articles {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 10%;
+  }
 
 body {
     width: 100%;
     /* height: 100vh; */
     background-color: white
+}
+#id {
+    text-align: center;
 }
 
 #logo {

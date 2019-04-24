@@ -7,7 +7,9 @@ $(function () {
       data.slice().reverse().forEach(function(x) {
         var img = `https://www.supremecommunity.com${x.img}`
 
-        var littleCards = `<div class='newCards' data-id=` + x._id + ` style='margin: 10px 10px;'>
+        var littleCards = `<div class='row'>
+        <div class='col-sm-3'>
+        <div class='newCards' data-id=` + x._id + ` style='margin: 10px 10px;'>
         <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="`+ img + `" alt="Card image cap">
         <div class="card-body">
@@ -18,6 +20,8 @@ $(function () {
         </div>
         <button style='border-style: none;background-color: white; margin-bottom: 10px; color: dodgerblue' data-id=` + x._id + ` id='cardNotes' class="btn btn-primary">Notes</button>
         </div>
+      </div>
+      </div>
       </div>
       </div>
       </div>`

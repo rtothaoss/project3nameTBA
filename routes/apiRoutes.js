@@ -1,6 +1,7 @@
 var db = require('../models');
 var axios = require("axios");
 var cheerio = require("cheerio");
+const sup = require('../public/js/index.js')
 
 
 
@@ -92,5 +93,11 @@ function droplistPage() {
         res.json(err)
       })
   });
+
+  // app.get('/bot', function(req,res) {
+  //   sup().then(function(supRes) {
+  //     res.send(supRes)
+  //   })
+  // })
 
 }
